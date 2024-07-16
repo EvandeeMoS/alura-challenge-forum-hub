@@ -1,11 +1,12 @@
 package br.com.alura.forumhub.domain.usuarios.autenticacao;
 
-import br.com.alura.forumhub.domain.usuarios.Perfil;
 import br.com.alura.forumhub.domain.usuarios.Usuario;
 import br.com.alura.forumhub.domain.usuarios.autenticacao.service.RegistroDto;
 import br.com.alura.forumhub.domain.usuarios.repository.PerfilRepository;
 import br.com.alura.forumhub.domain.usuarios.repository.UsuarioRepository;
 import br.com.alura.forumhub.infra.security.TokenService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,6 +48,7 @@ public class AutenticacaoController {
 
     @PostMapping("/register")
     @Transactional
+    @Operation(security = {@SecurityRequirement(name = "bearer-key")})
     public ResponseEntity<?> registrarUsuario(@RequestBody @Valid RegistroDto registroDto) {
         Usuario usuario = new Usuario();
         usuario.setNome(registroDto.nome());

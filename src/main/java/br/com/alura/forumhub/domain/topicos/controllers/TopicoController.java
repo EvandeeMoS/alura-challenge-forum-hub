@@ -5,6 +5,7 @@ import br.com.alura.forumhub.domain.topicos.dto.TopicoExposicaoDto;
 import br.com.alura.forumhub.domain.topicos.dto.TopicoAtualizacaoDto;
 import br.com.alura.forumhub.domain.topicos.dto.TopicoExposicaoDetalhadaDto;
 import br.com.alura.forumhub.domain.topicos.services.TopicoService;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,7 @@ import java.net.URI;
 
 @RestController
 @RequestMapping("/topicos")
+@SecurityRequirement(name = "bearer-key")
 public class TopicoController {
 
     @Autowired

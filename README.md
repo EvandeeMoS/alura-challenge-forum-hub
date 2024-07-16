@@ -26,7 +26,9 @@ Atualmente temos 5 endpoints no projeto:
 - Spring Boot 3
 - Lombok
 - MySql 
+- JWT
 - Flyway
+- SpringDoc 3
 - IntelliJ IDEA
 - Postman
 
@@ -41,5 +43,7 @@ Atualmente temos 5 endpoints no projeto:
 4 - Rode o projeto, isso fará com que as migrations sejam executadas e seu banco esteja pronto para uso;
  
 5 - Faça as requisições por meio de alguma ferramenta de sua preferência.
+
+5.1 - Há a possibilidade de verificar e realizar as requisições da api utilizando a documentação do projeto através do caminho "/swagger-ui.html".
 
 
