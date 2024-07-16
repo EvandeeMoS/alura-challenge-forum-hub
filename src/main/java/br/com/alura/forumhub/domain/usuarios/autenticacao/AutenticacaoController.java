@@ -41,7 +41,6 @@ public class AutenticacaoController {
     @Transactional
     public ResponseEntity<?> efetuarLogin(@RequestBody @Valid AutenticacaoDto dados) {
         var token = new UsernamePasswordAuthenticationToken(dados.login(), dados.senha());
-        System.out.println(token.toString());
         var autenticacao = authenticationManager.authenticate(token);
         return ResponseEntity.ok(tokenService.gerarToken((Usuario) autenticacao.getPrincipal()));
     }
