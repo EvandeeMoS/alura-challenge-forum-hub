@@ -5,6 +5,11 @@ O Forum Hub é um desafio proposto pela alura na finalização da sua trilha de 
 Esse projeto é uma api restful para um fórum fictício, onde temos endpoints para o crud de tópicos e outras funcionalidades,
 tudo isso seguindo as regras de negócio estimadas no ínicio do projeto.
 
+## Índice
+
+- [Endpoints](#Endpoints)
+- [Tecnologias utilizadas](#Tecnologias-utilizadas)
+
 ## Endpoints
 
 Atualmente temos 5 endpoints no projeto:
@@ -15,5 +20,26 @@ Atualmente temos 5 endpoints no projeto:
 - [PUT] -> "/topicos/{id}", para alterar as informações de um tópico;
 - [DELETE] -> "/topicos/{id}", para deletar um tópico do banco de dados.
 
+## Tecnologias utilizadas
+
+- Java 21
+- Spring Boot 3
+- Lombok
+- MySql 
+- Flyway
+- IntelliJ IDEA
+- Postman
+
+## Como implementar
+
+1 - Faça o clone do repositório ou o baixe;
+
+2 - Crie o banco de dados que deseja armazenar os dados;
+
+3 - Verifique o arquivo applications.properties e crie variáveis de ambiente condizentes com as presentes nesse arquivo;
+
+4 - Rode o projeto, isso fará com que as migrations sejam executadas e seu banco esteja pronto para uso;
+ 
+5 - Faça as requisições por meio de alguma ferramenta de sua preferência.
 
 
