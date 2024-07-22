@@ -1,6 +1,5 @@
 package br.com.alura.forumhub.domain.usuarios;
 
-import br.com.alura.forumhub.domain.usuarios.autenticacao.service.RegistroDto;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;

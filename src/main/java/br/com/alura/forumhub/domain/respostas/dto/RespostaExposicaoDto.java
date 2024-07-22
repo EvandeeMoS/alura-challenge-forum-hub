@@ -1,5 +1,6 @@
-package br.com.alura.forumhub.domain.respostas;
+package br.com.alura.forumhub.domain.respostas.dto;
 
+import br.com.alura.forumhub.domain.respostas.Resposta;
 import br.com.alura.forumhub.domain.usuarios.dto.UsuarioExposicaoDto;
 
 import java.time.LocalDateTime;

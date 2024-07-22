@@ -1,7 +1,7 @@
 package br.com.alura.forumhub.domain.topicos.dto;
 
 import br.com.alura.forumhub.domain.cursos.dto.CursoExposicaoDto;
-import br.com.alura.forumhub.domain.respostas.RespostaExposicaoDto;
+import br.com.alura.forumhub.domain.respostas.dto.RespostaExposicaoDto;
 import br.com.alura.forumhub.domain.topicos.StatusTopico;
 import br.com.alura.forumhub.domain.topicos.Topico;
 import br.com.alura.forumhub.domain.usuarios.dto.UsuarioExposicaoDto;

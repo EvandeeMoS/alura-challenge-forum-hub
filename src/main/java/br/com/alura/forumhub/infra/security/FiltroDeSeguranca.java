@@ -9,30 +9,43 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
+import org.springframework.web.servlet.HandlerExceptionResolver;
 
 import java.io.IOException;
 
-@Component
 public class FiltroDeSeguranca extends OncePerRequestFilter {
 
-    @Autowired
-    TokenService tokenService;
+    private HandlerExceptionResolver handlerExceptionResolver;
 
     @Autowired
-    UsuarioRepository usuarioRepository;
+    private TokenService tokenService;
+
+    @Autowired
+    private UsuarioRepository usuarioRepository;
+
+    @Autowired
+    public FiltroDeSeguranca(HandlerExceptionResolver handlerExceptionResolver) {
+        this.handlerExceptionResolver = handlerExceptionResolver;
+    }
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
-        var token = coletarTokenJwt(request);
-        if (token != null) {
+        try {
+            var token = coletarTokenJwt(request);
+            if (token == null) {
+                filterChain.doFilter(request, response);
+                return;
+            }
             var subject = tokenService.getSubject(token);
             UserDetails usuario = usuarioRepository.findByEmail(subject);
             var autenticacao = new UsernamePasswordAuthenticationToken(usuario, null, usuario.getAuthorities());
             SecurityContextHolder.getContext().setAuthentication(autenticacao);
+            filterChain.doFilter(request, response);
         }
-        filterChain.doFilter(request, response);
+        catch (Exception exc) {
+            handlerExceptionResolver.resolveException(request, response, null, exc);
+        }
     }
 
     private String coletarTokenJwt(HttpServletRequest request) {

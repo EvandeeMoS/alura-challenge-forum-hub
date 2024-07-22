@@ -1,7 +1,8 @@
 package br.com.alura.forumhub.domain.usuarios.autenticacao;
 
 import br.com.alura.forumhub.domain.usuarios.Usuario;
-import br.com.alura.forumhub.domain.usuarios.autenticacao.service.RegistroDto;
+import br.com.alura.forumhub.domain.usuarios.autenticacao.dto.AutenticacaoDto;
+import br.com.alura.forumhub.domain.usuarios.autenticacao.dto.RegistroDto;
 import br.com.alura.forumhub.domain.usuarios.repository.PerfilRepository;
 import br.com.alura.forumhub.domain.usuarios.repository.UsuarioRepository;
 import br.com.alura.forumhub.infra.security.TokenService;

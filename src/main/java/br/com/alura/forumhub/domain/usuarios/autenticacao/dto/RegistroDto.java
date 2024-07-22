@@ -1,11 +1,8 @@
-package br.com.alura.forumhub.domain.usuarios.autenticacao.service;
+package br.com.alura.forumhub.domain.usuarios.autenticacao.dto;
 
-import com.fasterxml.jackson.annotation.JsonAlias;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
-
-import java.util.List;
 
 public record RegistroDto(
         @NotEmpty

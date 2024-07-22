@@ -1,5 +1,7 @@
 # forum-hub
 
+<img alt="documentation in swagger view" src="readme-files/swagger-print.png">
+
 O Forum Hub é um desafio proposto pela alura na finalização da sua trilha de java + spring boot 3.
 
 Esse projeto é uma api restful para um fórum fictício, onde temos endpoints para o crud de tópicos e outras funcionalidades,
